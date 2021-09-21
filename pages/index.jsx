@@ -1,49 +1,113 @@
 import MenuBar from '../components/MenuBar'
+import Projects from '../components/Projects'
+import Certificates from '../components/Certificates'
+import RenderLink from '../components/RenderLink'
 import styles from '../styles/Home.module.css'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Home() {
 
-  function certificados() {
+  function formacao() {
     return (
-      <div className={styles.imgContainer}>
-
-        <a rel="noreferrer" href="/Certifications/c++.jpg">
-          <Image className={styles.imgSmall} src="/Certifications/c++.jpg" alt="Certicado" width="420" height="300" />
-        </a>
-
-        <a rel="noreferrer" href="/Certifications/solidity.jpg">
-          <Image className={styles.imgSmall} src="/Certifications/solidity.jpg" alt="Certicado" width="420" height="300" />
-        </a>
-
-        <a rel="noreferrer" href="/Certifications/unity.jpg">
-          <Image className={styles.imgSmall} src="/Certifications/unity.jpg" alt="Certicado" width="420" height="300" />
-        </a>
-
-        <a rel="noreferrer" href="/Certifications/gamejam.png">
-          <Image className={styles.imgSmall} src="/Certifications/gamejam.png" alt="Certicado" width="420" height="300" />
-        </a>
-
+      <div className={styles.container}>
+        <div className={styles.formation}>
+          <h2>Analise e Desenvolvimento de Sistemas</h2>
+          <div className={styles.formationDiv}>
+            <Link href="https://estacio.br/">
+              <a target="_blank">
+                <h3 className={styles.formationCursor}>Estacio de Sá</h3>
+              </a>
+            </Link>  
+            <h3>2018-2020</h3>            
+          </div>
+        </div>
+        <div className={styles.formation}>
+          <h2>Estagiário de Desenvolvimento</h2>
+          <div className={styles.formationDiv}>
+            <Link href="https://certiamazonia.org.br/">
+              <a target="_blank">
+                <h3 className={styles.formationCursor}>Fundação CERTI</h3>
+              </a>
+            </Link>  
+            <h3>2019-2020</h3>
+          </div>
+        </div>
+        <div className={styles.formation}>
+          <h2>Analista de Desenvolvimento de Software</h2>
+          <div className={styles.formationDiv}>
+            <Link href="https://certiamazonia.org.br/">
+              <a target="_blank">
+                <h3 className={styles.formationCursor}>Fundação CERTI</h3>
+              </a>
+            </Link>
+            <h3>2020-2021</h3>
+          </div>
+        </div>
       </div>
     )
   }
 
-  function projetos() {
+  function languages() {
     return (
-      <div className={styles.imgContainer}>
-        
-        <a rel="noreferrer" href="https://darksardinha.itch.io/nao-pebol">
-          <Image className={styles.imgProject} src="/Projects/NacaoPebol.png" alt="Projeto" width="480" height="270" />
-        </a>
+      <div className={styles.container2}>
+        <div className={styles.languages}>
+          <h2>HTML</h2>
+          <div className={styles.languagesDiv}>
+            <h3>Para construção da estrutura das páginas</h3>            
+          </div>
+        </div>
+        <div className={styles.languages}>
+          <h2>HTML</h2>
+          <div className={styles.languagesDiv}>
+            <h3>Para construção da estrutura das páginas</h3>            
+          </div>
+        </div>
+        <div className={styles.languages}>
+          <h2>HTML</h2>
+          <div className={styles.languagesDiv}>
+            <h3>Para construção da estrutura das páginas</h3>            
+          </div>
+        </div>
+        <div className={styles.languages}>
+          <h2>HTML</h2>
+          <div className={styles.languagesDiv}>
+            <h3>Para construção da estrutura das páginas</h3>            
+          </div>
+        </div>
+        <div className={styles.languages}>
+          <h2>HTML</h2>
+          <div className={styles.languagesDiv}>
+            <h3>Para construção da estrutura das páginas</h3>            
+          </div>
+        </div>
+        <div className={styles.languages}>
+          <h2>HTML</h2>
+          <div className={styles.languagesDiv}>
+            <h3>Para construção da estrutura das páginas</h3>            
+          </div>
+        </div>
+        <div className={styles.languages}>
+          <h2>HTML</h2>
+          <div className={styles.languagesDiv}>
+            <h3>Para construção da estrutura das páginas</h3>            
+          </div>
+        </div>
+        <div className={styles.languages}>
+          <h2>HTML</h2>
+          <div className={styles.languagesDiv}>
+            <h3>Para construção da estrutura das páginas</h3>            
+          </div>
+        </div>
+      </div>
+    )
+  }
 
-        <a rel="noreferrer" href="https://www.youtube.com/watch?v=R1DbT8NtkFQ">
-          <Image className={styles.imgProject} src="/Projects/LendasDoPebol.png" alt="Projeto" width="480" height="270" />
-        </a>
-
-        <a rel="noreferrer" href="https://store.steampowered.com/app/1482050/Space_Ship_Infinity/">
-          <Image className={styles.imgProject} src="/Projects/SpaceShip.png" alt="Projeto" width="480" height="270" />
-        </a>
-
+  function contato() {
+    return (
+      <div className={styles.container}>
+        <span className={styles.span}>lucas85235@gmail.com</span>
+        <span className={styles.span}>(92) 99482-2837</span>
       </div>
     )
   }
@@ -60,7 +124,9 @@ export default function Home() {
         </div>
 
         <div id="about" className={styles.part}>
-          <h1>About Me</h1>
+          <div className={styles.space}>
+            <h1>About Me</h1>
+          </div>
 
           <div className={styles.container}>
             <p className={styles.font}>
@@ -68,10 +134,14 @@ export default function Home() {
               Tenho formação em Análise e Desenvolvimento de Sistemas pela Universidade Estácio de Sá e 
               atualmente trabalho com desenvolvimento de jogos.
             </p>
-            <Image className={styles.perfil} src="/photo.jpg" alt="Foto de perfil" width="500" height="500" />
+            <div className={styles.perfilDiv}>
+              <Image className={styles.perfilImage} src="/photo.jpg" alt="Foto de perfil" width="500" height="500" />
+            </div>
           </div>
 
-          <h1>Sobre Este Site</h1>
+          <div className={styles.space}>
+            <h1>Sobre Este Site</h1>
+          </div>
           <div className={styles.container}>
             <p className={styles.font}>
               Esse site é uma prova disso, ele é a primeira versão que fiz para o meu <strong>portfólio.</strong>
@@ -85,20 +155,38 @@ export default function Home() {
         </div>
 
         <div id="portifolio" className={styles.part}>
-          <h1>Portfólio</h1>
-          <h2>Projetos</h2>
-          {projetos()}
-          <div className={styles.space}></div>
-          <h2>Cetificados</h2>
-          {certificados()}
+          <div className={styles.space}>
+            <h1>Portfólio</h1>
+          </div>
+          <h2>Meus Projetos e Jogos</h2>
+          <Projects/>
+          <div className={styles.space}>
+           <h1>Cetificados</h1>
+          </div>
+          <Certificates/>
         </div>
 
         <div id="formation" className={styles.part}>
-          <h1>Formação</h1>
+          <div className={styles.space}>
+            <h1>Formação</h1>
+          </div>
+          {formacao()}
+          <div className={styles.space}>
+            <h1>Linguagens e Ferramentas</h1>
+          </div>
+          {languages()}
+
         </div>
 
         <div id="contact" className={styles.part}>
-          <h1>Contato</h1>
+          <div className={styles.space}>
+            <h1>Contato</h1>
+          </div>
+          {contato()}
+        </div>
+
+        <div className={styles.baseboard}>
+          <h1>Redes Sociais</h1>
         </div>
 
       </div>

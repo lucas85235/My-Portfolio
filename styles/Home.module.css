@@ -1,98 +1,138 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .container2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 60%;
+    margin-top: 20PX;
 }
 
 .part {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #555;
-  width: 100%;
-  margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 40px;
 }
 
 .image {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-image: url('../public/banner-pc.jpg');
-  background-size: cover;
-  height: 500px;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../public/banner-pc.jpg');
+    background-size: cover;
+    height: 500px;
+    width: 100%;
 }
 
-.perfil {
-  border-radius: 250px;
-  margin: 20px;
+.perfilDiv {
+    margin: 30px;
 }
 
-.imgContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.imgProject {
-  margin: 10px;
-}
-
-.imgProject:hover {
-  opacity: 50%;
-  transform: scale(1.05);
+.perfilImage {
+    border-radius: 250px;
 }
 
 .space {
-  height: 8vh;
-  width: 100%;
-  background-color: #444;
-  margin-top: 30px;
-  margin-bottom: 15px;
-}
-
-.imgSmall {
-  margin: 15px;
-}
-
-.imgSmall:hover {
-  opacity: 50%;
-  transform: scale(1.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 8vh;
+    width: 100%;
+    background-color: #333;
+    margin-bottom: 10px;
 }
 
 .button {
-  font-size: 1.2rem;
-  margin-top: 80px;
-  border-radius: 20px;
-  background-color: #4444;
-  color: #eee;
-  padding: 7px 14px;
+    font-size: 1.2rem;
+    margin-top: 80px;
+    border-radius: 20px;
+    background-color: #4444;
+    color: #eee;
+    padding: 7px 14px;
 }
 
 .button:hover {
-  background-color: #6cf;
+    background-color: #6cf;
 }
 
 .font {
-  text-align: center;
-  font-size: 1.25rem;
-  width: 700px;
+    text-align: center;
+    font-size: 1.25rem;
+    width: 700px;
 }
 
 .font2 {
-  color: #eee;
-  background-color: #4443;
-  padding: 6px 18px;
-  border-radius: 20px;
-  text-align: center;
+    color: #eee;
+    background-color: #4443;
+    padding: 6px 18px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.span {
+    text-align: center;
+    font-size: 1.25rem;
+    width: 700px;
+    margin: 15px;
+}
+
+.baseboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    width: 100%;
+    background-color: #222;
+}
+
+.formation {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: #2223;
+    width: 400px;
+    height: 200px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    padding: 40px;
+}
+
+.formationDiv {
+    display: flex;
+    justify-content: space-around;
+}
+
+.formationCursor {
+    cursor: pointer;
+}
+
+.languages {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+    background-color: #2223;
+    width: 300px;
+    height: 300px;
+    margin-top: 15PX;
+    margin-bottom: 10PX;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 40px;
+}
+
+.languagesDiv {
+    display: flex;
+    justify-content: space-around;
 }

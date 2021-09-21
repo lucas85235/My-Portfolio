@@ -1,0 +1,17 @@
+.imgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.imgProject {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.imgProject:hover {
+    opacity: 50%;
+    transform: scale(1.05);
+}

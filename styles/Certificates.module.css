@@ -1,0 +1,18 @@
+.imgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.imgSmall {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+  
+.imgSmall:hover {
+    opacity: 50%;
+    transform: scale(1.05);
+}
