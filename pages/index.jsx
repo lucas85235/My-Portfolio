@@ -1,5 +1,6 @@
 import MenuBar from '../components/MenuBar'
 import styles from '../styles/Home.module.css'
+import Image from 'next/image'
 
 export default function Home() {
 
@@ -7,20 +8,20 @@ export default function Home() {
     return (
       <div className={styles.imgContainer}>
 
-        <a target="_blank" href="Certifications/c++.jpg">
-          <img className={styles.imgSmall} src="Certifications/c++.jpg" alt="Certicado" />
+        <a rel="noreferrer" href="/Certifications/c++.jpg">
+          <Image className={styles.imgSmall} src="/Certifications/c++.jpg" alt="Certicado" width="420" height="300" />
         </a>
 
-        <a target="_blank" href="Certifications/solidity.jpg">
-          <img className={styles.imgSmall} src="Certifications/solidity.jpg" alt="Certicado" />
+        <a rel="noreferrer" href="/Certifications/solidity.jpg">
+          <Image className={styles.imgSmall} src="/Certifications/solidity.jpg" alt="Certicado" width="420" height="300" />
         </a>
 
-        <a target="_blank" href="Certifications/unity.jpg">
-          <img className={styles.imgSmall} src="Certifications/unity.jpg" alt="Certicado" />
+        <a rel="noreferrer" href="/Certifications/unity.jpg">
+          <Image className={styles.imgSmall} src="/Certifications/unity.jpg" alt="Certicado" width="420" height="300" />
         </a>
 
-        <a target="_blank" href="Certifications/gamejam.png">
-          <img className={styles.imgSmall} src="Certifications/gamejam.png" alt="Certicado" />
+        <a rel="noreferrer" href="/Certifications/gamejam.png">
+          <Image className={styles.imgSmall} src="/Certifications/gamejam.png" alt="Certicado" width="420" height="300" />
         </a>
 
       </div>
@@ -31,16 +32,16 @@ export default function Home() {
     return (
       <div className={styles.imgContainer}>
         
-        <a target="_blank" href="https://darksardinha.itch.io/nao-pebol">
-          <img className={styles.imgProject} src="Projects/NacaoPebol.png" alt="Projeto" />
+        <a rel="noreferrer" href="https://darksardinha.itch.io/nao-pebol">
+          <Image className={styles.imgProject} src="/Projects/NacaoPebol.png" alt="Projeto" width="480" height="270" />
         </a>
 
-        <a target="_blank" href="https://www.youtube.com/watch?v=R1DbT8NtkFQ">
-          <img className={styles.imgProject} src="Projects/LendasDoPebol.png" alt="Projeto" />
+        <a rel="noreferrer" href="https://www.youtube.com/watch?v=R1DbT8NtkFQ">
+          <Image className={styles.imgProject} src="/Projects/LendasDoPebol.png" alt="Projeto" width="480" height="270" />
         </a>
 
-        <a target="_blank" href="https://store.steampowered.com/app/1482050/Space_Ship_Infinity/">
-          <img className={styles.imgProject} src="Projects/SpaceShip.png" alt="Projeto" />
+        <a rel="noreferrer" href="https://store.steampowered.com/app/1482050/Space_Ship_Infinity/">
+          <Image className={styles.imgProject} src="/Projects/SpaceShip.png" alt="Projeto" width="480" height="270" />
         </a>
 
       </div>
@@ -67,7 +68,7 @@ export default function Home() {
               Tenho formação em Análise e Desenvolvimento de Sistemas pela Universidade Estácio de Sá e 
               atualmente trabalho com desenvolvimento de jogos.
             </p>
-            <img className={styles.perfil} src="photo.jpg" alt="" />
+            <Image className={styles.perfil} src="/photo.jpg" alt="Foto de perfil" width="500" height="500" />
           </div>
 
           <h1>Sobre Este Site</h1>

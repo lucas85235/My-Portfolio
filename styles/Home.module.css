@@ -33,8 +33,6 @@
 }
 
 .perfil {
-  height: 500px;
-  width: 500px;
   border-radius: 250px;
   margin: 20px;
 }
@@ -47,8 +45,6 @@
 }
 
 .imgProject {
-  height: 270px;
-  width: 480px;
   margin: 10px;
 }
 
@@ -66,8 +62,6 @@
 }
 
 .imgSmall {
-  height: 300px;
-  width: 420px;
   margin: 15px;
 }
 
