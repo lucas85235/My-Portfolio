@@ -3,36 +3,43 @@ import styles from '../styles/Projects.module.css'
 
 export default function Projects() {
     return (
-        <div className={styles.imgContainer}>
+        <div className={styles.part}>
+            
+            <span className={styles.font}>Meus Projetos e Jogos</span>
 
-            <RenderLink
-                render={styles.imgProject}
-                link="https://darksardinha.itch.io/nao-pebol"
-                image="/Projects/NacaoPebol.png"
-                width="480" height="270"
-            />
+            <div className={styles.imgContainer}>
 
-            <RenderLink
-                render={styles.imgProject}
-                link="https://www.youtube.com/watch?v=R1DbT8NtkFQ"
-                image="/Projects/LendasDoPebol.png"
-                width="480" height="270"
-            />
+                <RenderLink
+                    render={styles.imgProject}
+                    link="https://darksardinha.itch.io/nao-pebol"
+                    image="/Projects/NacaoPebol.png"
+                    width="480" height="270"
+                />
 
-            <RenderLink
-                render={styles.imgProject}
-                link="https://store.steampowered.com/app/1482050/Space_Ship_Infinity/"
-                image="/Projects/SpaceShip.png"
-                width="480" height="270"
-            />
+                <RenderLink
+                    render={styles.imgProject}
+                    link="https://www.youtube.com/watch?v=R1DbT8NtkFQ"
+                    image="/Projects/LendasDoPebol.png"
+                    width="480" height="270"
+                />
 
-            <RenderLink
-                render={styles.imgProject}
-                link="https://github.com/lucas85235/portifolio/"
-                image="/Projects/thisSite.png"
-                width="480" height="270"
-            />
+                <RenderLink
+                    render={styles.imgProject}
+                    link="https://store.steampowered.com/app/1482050/Space_Ship_Infinity/"
+                    image="/Projects/SpaceShip.png"
+                    width="480" height="270"
+                />
+
+                <RenderLink
+                    render={styles.imgProject}
+                    link="https://github.com/lucas85235/portifolio/"
+                    image="/Projects/thisSite.png"
+                    width="480" height="270"
+                />
+
+            </div>
 
         </div>
+
     )
 }

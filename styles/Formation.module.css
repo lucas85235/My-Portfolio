@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formation {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: #888;
+    width: 500px;
+    height: 200px;
+    margin-bottom: 30px;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.curso {
+    cursor: pointer;
+}

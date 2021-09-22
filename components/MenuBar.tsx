@@ -18,6 +18,9 @@ export default function MenuBar(props: MenuBarProps) {
             <a href="#formation">
                 <button className={styles.button}>Formação</button>
             </a>
+            <a href="#skills">
+                <button className={styles.button}>Skills</button>
+            </a>            
             <a href="#contact">
                 <button className={styles.button}>Contato</button>
             </a>

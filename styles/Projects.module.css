@@ -8,10 +8,23 @@
 .imgProject {
     margin-left: 10px;
     margin-right: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .imgProject:hover {
     opacity: 50%;
     transform: scale(1.05);
+}
+
+.part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.font {
+    text-align: center;
+    font-size: 1.25rem;
+    margin-bottom: 30px;
 }
