@@ -14,7 +14,7 @@ export default function ToolBox(props: ToolBoxProps) {
     <div className={props.color}>
       <div className={props.lang}>
         <div className={props.icon}>
-          <Image src="/Media/Code.png" alt="" width="45px" height="45px" />
+          <Image src="/Media/code.png" alt="icon" width="45px" height="45px" />
         </div>
         <h2>{props.title}</h2>
         <div className={props.div}>
