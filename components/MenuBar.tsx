@@ -4,11 +4,12 @@ import Link from 'next/link'
 interface MenuBarProps {
     statusTitle: string 
     status: string
+    id: string
 }
 
 export default function MenuBar(props: MenuBarProps) {
     return (
-        <div className={styles.bar}>
+        <div id={props.id} className={styles.bar}>
             <a href="#about">
                 <button className={styles.button}>About Me</button>
             </a>

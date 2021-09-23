@@ -3,6 +3,7 @@ import Projects from '../components/Projects'
 import Certificates from '../components/Certificates'
 import Formation from '../components/Formation'
 import Languages from '../components/Languages'
+import BottonButton from '../components/BottonButton'
 import styles from '../styles/Home.module.css'
 import Image from 'next/image'
 
@@ -10,7 +11,7 @@ export default function Home() {
 
   function aboutMe() {
     return (
-      <>
+      <div className={styles.container}>
         <p className={styles.font}>
           Olá me chamo Lucas, sou programador com foco no <strong>Backend</strong> mas também consigo lidar muito bem com Frontend.
         </p>
@@ -18,16 +19,13 @@ export default function Home() {
           Tenho formação em Análise e Desenvolvimento de Sistemas pela Universidade Estácio de Sá e
           atualmente trabalho com desenvolvimento de jogos.
         </p>
-        <div className={styles.perfilDiv}>
-          <Image className={styles.perfilImage} src="/photo.jpg" alt="Foto de perfil" width="500" height="500" />
-        </div>
-      </>
+      </div>
     )
   }
 
   function aboutSite() {
     return (
-      <>
+      <div className={styles.container}>
         <p className={styles.font}>
           Esse site é a primeira versão que fiz para o meu <strong>portfólio.</strong>
         </p>
@@ -36,7 +34,7 @@ export default function Home() {
           next pois faz somente uma semana que comecei a estudar desenvolvimento web em geral mesmo assim já comecei a
           colocar esses conhecimentos em pratica.
         </p>
-      </>
+      </div>
     )
   }
 
@@ -51,7 +49,8 @@ export default function Home() {
 
   return (
     <div>
-      <MenuBar />
+      <MenuBar id="init"/>
+      <BottonButton />
       <div className={styles.container}>
 
         <div className={styles.image}>
@@ -61,20 +60,21 @@ export default function Home() {
         </div>
 
         <div id="about" className={styles.part}>
+          
           <div className={styles.space}>
             <h1>About Me</h1>
           </div>
 
-          <div className={styles.container}>
-            {aboutMe()}
-          </div>
+          {aboutMe()}
+
+          <div className={styles.part}></div>
 
           <div className={styles.space}>
             <h1>Sobre Este Site</h1>
           </div>
-          <div className={styles.container}>
-            {aboutSite()}
-          </div>
+
+          {aboutSite()}
+
         </div>
 
         <div id="portifolio" className={styles.part}>

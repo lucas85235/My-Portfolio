@@ -1,0 +1,17 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 10px;
+    bottom: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    position: fixed;
+    border: none;
+    background-color: rgba(100, 148, 237, 0.4);
+}
+
+.button:hover {
+    background-color: cornflowerblue;
+}
