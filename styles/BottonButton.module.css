@@ -10,6 +10,7 @@
     position: fixed;
     border: none;
     background-color: rgba(100, 148, 237, 0.4);
+    cursor: pointer;
 }
 
 .button:hover {

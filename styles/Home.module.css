@@ -50,6 +50,7 @@
     background-color: #4444;
     color: #eee;
     padding: 7px 14px;
+    cursor: pointer;
 }
 
 .button:hover {

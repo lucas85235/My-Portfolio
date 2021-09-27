@@ -5,7 +5,7 @@ import Formation from '../components/Formation'
 import Languages from '../components/Languages'
 import BottonButton from '../components/BottonButton'
 import styles from '../styles/Home.module.css'
-import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Home() {
 
@@ -17,22 +17,7 @@ export default function Home() {
         </p>
         <p className={styles.font}>
           Tenho formação em Análise e Desenvolvimento de Sistemas pela Universidade Estácio de Sá e
-          atualmente trabalho com desenvolvimento de jogos.
-        </p>
-      </div>
-    )
-  }
-
-  function aboutSite() {
-    return (
-      <div className={styles.container}>
-        <p className={styles.font}>
-          Esse site é a primeira versão que fiz para o meu <strong>portfólio.</strong>
-        </p>
-        <p className={styles.font}>
-          Foi feito com <strong>Next.js</strong>, ainda estou aprendendo a usar as ferramente do
-          next pois faz somente uma semana que comecei a estudar desenvolvimento web em geral mesmo assim já comecei a
-          colocar esses conhecimentos em pratica.
+          atualmente venho trabalhando com o desenvolvimento de jogos.
         </p>
       </div>
     )
@@ -49,31 +34,27 @@ export default function Home() {
 
   return (
     <div>
-      <MenuBar id="init"/>
+      <MenuBar id="init" />
       <BottonButton />
       <div className={styles.container}>
 
         <div className={styles.image}>
           <h1>Lucas Lima</h1>
           <h2>Software Developer - Backend</h2>
-          <button className={styles.button}>Ver Curriculo (PDF)</button>
+          <Link href="https://drive.google.com/file/d/1VlBC69YxptEC9MxCYa9_MrSPH8FqbvDb/view?usp=sharing">
+            <a target="_blank">
+              <button className={styles.button}>Ver Currículo (PDF)</button>
+            </a>
+          </Link>
         </div>
 
         <div id="about" className={styles.part}>
-          
+
           <div className={styles.space}>
             <h1>About Me</h1>
           </div>
 
           {aboutMe()}
-
-          <div className={styles.part}></div>
-
-          <div className={styles.space}>
-            <h1>Sobre Este Site</h1>
-          </div>
-
-          {aboutSite()}
 
         </div>
 
