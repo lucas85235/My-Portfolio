@@ -40,7 +40,7 @@ export default function Home() {
 
         <div className={styles.image}>
           <h1>Lucas Lima</h1>
-          <h2>Software Developer - Backend</h2>
+          <h2>Desenvolvedor de Software - Backend</h2>
           <Link href="https://drive.google.com/file/d/1VlBC69YxptEC9MxCYa9_MrSPH8FqbvDb/view?usp=sharing">
             <a target="_blank">
               <button className={styles.button}>Ver Currículo (PDF)</button>
@@ -51,7 +51,7 @@ export default function Home() {
         <div id="about" className={styles.part}>
 
           <div className={styles.space}>
-            <h1>About Me</h1>
+            <h1>Sobre Min</h1>
           </div>
 
           {aboutMe()}
