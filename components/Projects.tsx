@@ -4,7 +4,7 @@ import styles from '../styles/Projects.module.css'
 export default function Projects() {
     return (
         <div className={styles.part}>
-            
+
             <span className={styles.font}>Meus Projetos e Jogos</span>
 
             <div className={styles.imgContainer}>
@@ -32,8 +32,8 @@ export default function Projects() {
 
                 <RenderLink
                     render={styles.imgProject}
-                    link="https://github.com/lucas85235/portifolio/"
-                    image="/Projects/thisSite.png"
+                    link="https://darksardinha.itch.io/warbots"
+                    image="/Projects/Warbots.png"
                     width="480" height="270"
                 />
 

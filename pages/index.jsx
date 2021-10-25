@@ -13,11 +13,11 @@ export default function Home() {
     return (
       <div className={styles.container}>
         <p className={styles.font}>
-          Olá me chamo Lucas, sou programador com foco no <strong>Backend</strong> mas também consigo lidar muito bem com Frontend.
+          Olá me chamo Lucas, sou programador com foco no <strong>Desenvolvedor de Jogos</strong>.
         </p>
         <p className={styles.font}>
           Tenho formação em Análise e Desenvolvimento de Sistemas pela Universidade Estácio de Sá e
-          atualmente venho trabalhando com o desenvolvimento de jogos.
+          atualmente venho trabalhando no desenvolvimento de jogos.
         </p>
       </div>
     )
