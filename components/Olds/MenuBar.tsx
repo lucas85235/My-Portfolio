@@ -1,4 +1,4 @@
-import styles from "../styles/MenuBar.module.css"
+import styles from "../../styles/MenuBar.module.css"
 import Link from 'next/link'
 
 interface MenuBarProps {

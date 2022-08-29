@@ -3,7 +3,7 @@ import styles from '../styles/Projects.module.css'
 
 export default function Projects() {
     return (
-        <div className={styles.part}>
+        <div className={styles.imgContainer}>
 
             <span className={styles.font}>Meus Projetos e Jogos</span>
 

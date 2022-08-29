@@ -1,4 +1,6 @@
-import MenuBar from '../components/MenuBar'
+import Head from 'next/head'
+import NavBar from '../components/NavBar'
+import SocialMedias from '../components/SocialMedias'
 import Projects from '../components/Projects'
 import Certificates from '../components/Certificates'
 import Formation from '../components/Formation'
@@ -27,15 +29,22 @@ export default function Home() {
     return (
       <div className={styles.container}>
         <a className={styles.span} href="mailto:lucas85235@gmail.com">lucas85235@gmail.com</a>
-        <a className={styles.span} href="tel:+55-92-99482-2837">(92) 99482-2837</a>
+        <a className={styles.span} href="https://wa.me/5592994822837">(92) 99482-2837</a>
       </div>
     )
   }
 
   return (
     <div>
-      <MenuBar id="init" />
-      <BottonButton />
+      <Head>
+        <title>Lucas Portfólio</title>
+        <meta name="description" content="Meu portfólio de jogos" />
+        <link rel="icon" href="/logo.png" />
+      </Head>
+
+      <NavBar/>
+      <SocialMedias/>
+
       <div className={styles.container}>
 
         <div className={styles.image}>
@@ -81,15 +90,8 @@ export default function Home() {
 
         </div>
 
-        <div id="contact" className={styles.part}>
-          <div className={styles.space}>
-            <h1>Contato</h1>
-          </div>
-          {contato()}
-        </div>
-
         <div className={styles.baseboard}>
-          <span>Copyright ©2020 All rights reserved | This website was developed by Lucas Lima</span>
+          <span>Copyright ©2022 All rights reserved | This website was developed by Lucas Lima</span>
         </div>
 
       </div>

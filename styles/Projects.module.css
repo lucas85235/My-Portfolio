@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    width: 1000px;
+    width: 70vw;
 }
 
 .imgProject {
@@ -15,13 +15,6 @@
 .imgProject:hover {
     opacity: 50%;
     transform: scale(1.05);
-}
-
-.part {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 .font {
