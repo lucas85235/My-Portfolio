@@ -4,11 +4,11 @@ import Image from 'next/image'
 const buttons = [
     {
         link: "mailto:lucas85235@gmail.com",
-        image: "/icons/email.png"        
+        image: "/Icons/email.png"        
     },
     {
         link: "https://wa.me/5592994822837",
-        image: "/icons/whatsapp.png"
+        image: "/Icons/whatsapp.png"
     }
 ]
 
