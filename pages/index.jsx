@@ -15,10 +15,10 @@ export default function Home() {
     return (
       <div className={styles.container}>
         <p className={styles.font}>
-          Hello my name is Lucas, I'm a <strong>Game Developer</strong> and <strong>Backend Developer</strong>.
+          {"Hello my name is Lucas, I'm a "}<strong>Game Developer</strong> and <strong>Backend Developer</strong>.
         </p>
         <p className={styles.font}>
-          I already have 3 years of experience in the market, I've worked with embedded systems, mobile, web and games that are currently my focus, I use the Unity engine to make games, I'm always learning to use new tools to improve my skills as a developer.
+          {"I already have 3 years of experience in the market, I've worked with embedded systems, mobile, web and games that are currently my focus, I use the Unity engine to make games, I'm always learning to use new tools to improve my skills as a developer."}
         </p>
       </div>
     )
