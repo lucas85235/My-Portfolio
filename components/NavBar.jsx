@@ -9,24 +9,6 @@ import Button from './Button';
 // formation
 // skills
 
-{/* <div id={props.id} className={styles.bar}>
-<a href="#about">
-    <button className={styles.button}>Sobre Min</button>
-</a>
-<a href="#portifolio">
-    <button className={styles.button}>Portfólio</button>
-</a>
-<a href="#formation">
-    <button className={styles.button}>Formação</button>
-</a>
-<a href="#skills">
-    <button className={styles.button}>Habilidades</button>
-</a>            
-<a href="#contact">
-    <button className={styles.button}>Contato</button>
-</a>
-</div> */}
-
 const links = [
     {
         label: "Home",
@@ -37,28 +19,23 @@ const links = [
 
 const secondaryLinks = [
     {
-        label: "Sobre",
+        label: "About Me",
         href: "#about",
         target: "_self",
     },
     {
-        label: "Portfólio",
+        label: "Portifolio",
         href: "#portifolio",
         target: "_self",
     },
     {
-        label: "Formação",
+        label: "Formation",
         href: "#formation",
         target: "_self",
     },
     {
-        label: "Habilidades",
+        label: "Skills",
         href: "#skills",
-        target: "_self",
-    },
-    {
-        label: "Contato",
-        href: "#contact",
         target: "_self",
     },
 ];

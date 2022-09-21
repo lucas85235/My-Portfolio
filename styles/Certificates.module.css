@@ -11,9 +11,12 @@
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 10px;
+    border: solid #444 10px;
+
 }
 
 .imgSmall:hover {
     opacity: 50%;
     transform: scale(1.05);
+    border: solid #777 5px;
 }

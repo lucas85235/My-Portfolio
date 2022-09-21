@@ -19,9 +19,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url('../public/banner-pc.jpg');
+    background-image: url('../public/bioshock.jpg');
+    background-position: top, center;
     background-size: cover;
-    height: 450px;
+    height: 500px;
     width: 100%;
 }
 
@@ -39,7 +40,7 @@
     justify-content: center;
     height: 80px;
     width: 100%;
-    background-color: #333;
+    background-color: #ddd;
     margin-bottom: 25px;
 }
 
@@ -95,5 +96,29 @@
     flex-direction: column;
     height: 60px;
     width: 100%;
-    background-color: #222;
+    background-color: #aaa;
+}
+
+.baseboardSpan {
+    color: #222;
+}
+
+.h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    padding: 0.5rem 1rem;
+    color: #444;
+    border: solid 4px;
+}
+
+.h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    padding: 0.5rem 1rem;
+    color: #444;
+    border: solid 3px;
 }

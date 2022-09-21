@@ -4,17 +4,23 @@
     align-items: center;
     flex-wrap: wrap;
     width: 70vw;
+    margin-top: 15px;
+    margin-bottom: 10px;
 }
 
 .imgProject {
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 30px;
+    border: solid #333 10px;
+    background-color: #333;
+
 }
 
 .imgProject:hover {
     opacity: 50%;
     transform: scale(1.05);
+    border: solid #777 5px;
 }
 
 .font {

@@ -7,54 +7,51 @@ export default function Languages() {
 
       <ToolBox
         lang={styles.lang} div={styles.div} title="HTML"
-        descrition="Para construção da estrutura das páginas"
+        descrition="To build the page structure"
         color={styles.color1} icon={styles.icon}
       />
 
       <ToolBox
         lang={styles.lang} div={styles.div} title="CSS"
-        descrition="Para estilização das telas"
+        descrition="For styling my web pages"
+        color={styles.color1} icon={styles.icon}
+      />
+
+      <ToolBox
+        lang={styles.lang} div={styles.div} title="C++"
+        descrition="For the development of embedded"
+        color={styles.color2} icon={styles.icon}
+      />
+
+      <ToolBox
+        lang={styles.lang} div={styles.div} title="C#"
+        descrition="For the construction of my games"
         color={styles.color2} icon={styles.icon}
       />
 
       <ToolBox
         lang={styles.lang} div={styles.div} title="Next.js"
-        descrition="Para o frontend das minhas aplicações"
+        descrition="To the frontend of my applications"
         color={styles.color3} icon={styles.icon}
-
-      />
-
-      <ToolBox
-        lang={styles.lang} div={styles.div} title="C#"
-        descrition="Para a construção dos meus jogos"
-        color={styles.color4} icon={styles.icon}
-
-      />
-
-      <ToolBox
-        lang={styles.lang} div={styles.div} title="C++"
-        descrition="Para o desenvolvimento de emabarcados"
-        color={styles.color2} icon={styles.icon}
-
       />
 
       <ToolBox
         lang={styles.lang} div={styles.div} title="Json"
-        descrition="Para troca de dados entre sistemas"
-        color={styles.color1} icon={styles.icon}
+        descrition="To exchange data between systems"
+        color={styles.color3} icon={styles.icon}
 
       />
 
       <ToolBox
         lang={styles.lang} div={styles.div} title="Firebase"
-        descrition="Para salvar dados e criar sistemas login"
+        descrition="To save data and create login systems"
         color={styles.color4} icon={styles.icon}
       />
 
       <ToolBox
         lang={styles.lang} div={styles.div} title="Solidity"
-        descrition="Para fazer contratos inteligentes"
-        color={styles.color3} icon={styles.icon}
+        descrition="To make smart contracts"
+        color={styles.color4} icon={styles.icon}
       />
 
     </div>

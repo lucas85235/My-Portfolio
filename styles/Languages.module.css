@@ -4,7 +4,8 @@
     align-items: center;
     flex-wrap: wrap;
     width: 70vw;
-    margin-top: 20PX;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .lang {
@@ -16,6 +17,7 @@
     height: 300px;
     padding: 40px;
     border-radius: 20px;
+    color: #444;
 }
 
 .div {

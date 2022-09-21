@@ -5,7 +5,7 @@ export default function Projects() {
     return (
         <div className={styles.imgContainer}>
 
-            <span className={styles.font}>Meus Projetos e Jogos</span>
+            {/* <span className={styles.font}>My Projects and Games</span> */}
 
             <div className={styles.imgContainer}>
 
