@@ -29,7 +29,7 @@ export default function Home() {
       <Head>
         <title>Lucas Portfolio</title>
         <meta name="description" content="Meu portfólio de jogos" />
-        <link rel="icon" href="/logo.png" />
+        <link rel="icon" href="/icons/control.png" />
       </Head>
 
       <NavBar />
