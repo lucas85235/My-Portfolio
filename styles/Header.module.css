@@ -45,6 +45,39 @@
     margin-left: auto;
 }
 
+.ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.list {
+    margin-right: 0.5rem;
+    display: inline-block;
+    list-style: none;
+}
+
+.a {
+    background: #b0b7bf;
+    width: 36px;
+    height: 36px;
+    display: inline-block;
+    border-radius: 50%;
+    background-clip: padding-box;
+    color: #fff;
+    text-align: center;
+    transition: all 0.4s ease-in-out;
+    text-decoration: none;
+}
+
+.icon {
+    font-size: 20px;
+    margin-top: 8px;
+    overflow: visible;
+    width: 0.875em;
+    height: 1em;
+    vertical-align: -0.125em;
+}
+
 /* Container */
 
 .container::after {
