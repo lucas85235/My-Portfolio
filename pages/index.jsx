@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Header from '../components/Header';
 import Image from 'next/image';
-import styles from '../styles/New.module.css'
+import styles from '../styles/Index.module.css'
 
 const information = [
     {
@@ -155,7 +155,7 @@ function Body() {
                                     <div className={styles.item}>
                                         <div className={styles.imageDiv}>
                                             <a href={mainGame.link} target="_blank" rel="noreferrer">
-                                                <Image className={styles.image} src={mainGame.image} height={400} width={800} objectFit='fill' />
+                                                <Image className={styles.image} src={mainGame.image} height={400} width={800} objectFit='fill' alt='' />
                                             </a>
                                         </div>
 
@@ -179,7 +179,7 @@ function Body() {
                                 {otherGames.map((value, key) =>
                                     <div className={styles.itemRow} key={key}>
                                         <a className={styles.rowA} href={value.link} target="_blank" rel="noreferrer">
-                                            <Image className={styles.image} src={value.image} height={437} width={777} objectFit='fill' />
+                                            <Image className={styles.image} src={value.image} height={437} width={777} objectFit='fill' alt='' />
                                         </a>
                                         <div className={styles.rowDiv}>
                                             <h3 className={`${styles.title} + ${styles.mb2}`}>
@@ -229,7 +229,7 @@ function Body() {
                                     {information.map((value, key) =>
                                         <li className={styles.li} key={key}>
                                             <div className={styles.imgIcon}>
-                                                <Image src={value.icon} height={180} width={180} />
+                                                <Image src={value.icon} height={180} width={180} alt='' />
                                             </div>
                                             <a className={value.link ? styles.moreLink : null} href={value.link} target="_blank" rel="noreferrer">
                                                 {value.text}
