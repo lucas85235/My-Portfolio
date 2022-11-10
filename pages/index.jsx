@@ -6,17 +6,17 @@ import styles from '../styles/Index.module.css'
 const information = [
     {
         text: "Manaus, Amazonas, Brazil",
-        icon: "/icons/location.png"
+        icon: "/Icons/location.webp"
     },
     {
         text: "lucas85235@gmail.com",
         link: "mailto:lucas85235@gmail.com",
-        icon: "/icons/email.png"
+        icon: "/Icons/email.webp"
     },
     {
         text: "Download CV",
         link: "https://drive.google.com/file/d/1VlBC69YxptEC9MxCYa9_MrSPH8FqbvDb/view",
-        icon: "/icons/pdf.png"
+        icon: "/Icons/pdf.webp"
     }
 ]
 
@@ -309,7 +309,7 @@ function Page() {
             <Head>
                 <title>Lucas Portfolio</title>
                 <meta name="description" content="My portfolio of games" />
-                <link rel="icon" href="/icons/control.png" />
+                <link rel="icon" href="/Icons/control.webp" />
             </Head>
 
             <Header />
