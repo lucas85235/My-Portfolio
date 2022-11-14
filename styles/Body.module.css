@@ -96,7 +96,7 @@
 
 .item {
     margin-bottom: 60px;
-    text-align: center!important;
+    text-align: center !important;
 }
 
 .imageDiv {
@@ -106,8 +106,8 @@
 }
 
 .image {
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
-    border-radius: 0.25rem!important;
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
+    border-radius: 0.25rem !important;
     max-width: 100%;
     height: auto;
     vertical-align: middle;
@@ -121,7 +121,7 @@
 .title {
     font-size: 20px;
     margin-top: 0;
-    margin-bottom: 1rem!important;
+    margin-bottom: 1rem !important;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     color: #778492;
@@ -135,7 +135,7 @@
 
 .textLeft {
     margin-bottom: 30px;
-    text-align: left!important;
+    text-align: left !important;
 }
 
 .desc {
@@ -178,7 +178,7 @@
     margin-bottom: 60px;
     margin-top: 1rem;
     border: 0;
-    border-top: 1px solid rgba(0,0,0,.1);
+    border-top: 1px solid rgba(0, 0, 0, .1);
 }
 
 .itemRow {
@@ -187,7 +187,7 @@
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.15)!important;
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .15) !important;
     padding: 20px 0;
 }
 
@@ -207,7 +207,7 @@
     position: relative;
     width: 100%;
     padding-right: 15px;
-    padding-left: 15px;  
+    padding-left: 15px;
 }
 
 .moreLink {
@@ -224,7 +224,7 @@
 
 .mb2 {
     margin-top: 0;
-    margin-bottom: 0.5rem!important;
+    margin-bottom: 0.5rem !important;
 }
 
 /* Container */

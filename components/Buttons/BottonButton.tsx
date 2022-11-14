@@ -1,7 +1,7 @@
 import styles from '../styles/BottonButton.module.css'
 import Image from 'next/image'
 
-export default function BottonButton(props) {
+function BottonButton() {
     return (
         <a href="#init">
             <button className={styles.button}>
@@ -10,3 +10,5 @@ export default function BottonButton(props) {
         </a>
     )
 }
+
+export default BottonButton;
