@@ -8,7 +8,7 @@ const languages = [
         stars: 5
     },
     {
-        lang: "Esglish: ",
+        lang: "English: ",
         level: "Intermediate",
         stars: 3
     }
