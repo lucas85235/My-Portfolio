@@ -2,12 +2,22 @@ import MakeStars from "./MakeStars";
 
 const skills = [
     {
-        skill: "C#: ",
+        skill: "Unity and C#: ",
+        level: "Expert",
+        stars: 5
+    },
+    {
+        skill: "Versioning with Git: ",
+        level: "Expert",
+        stars: 5
+    },
+    {
+        skill: "Scrum and Kanban: ",
         level: "Pro",
         stars: 4
     },
     {
-        skill: "Unity: ",
+        skill: "Firebase: ",
         level: "Pro",
         stars: 4
     },
@@ -17,7 +27,7 @@ const skills = [
         stars: 4
     },
     {
-        skill: "Firebase: ",
+        skill: "Next, React: ",
         level: "Great",
         stars: 3
     },

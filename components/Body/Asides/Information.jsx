@@ -12,7 +12,7 @@ const information = [
     },
     {
         text: "Download CV",
-        link: "https://drive.google.com/file/d/1VlBC69YxptEC9MxCYa9_MrSPH8FqbvDb/view",
+        link: "https://drive.google.com/file/d/1FYAj3AKvgXl1Z73OmvJY63O8ZvyNcUcW/view?usp=sharing",
         icon: "/Icons/pdf.webp"
     }
 ]

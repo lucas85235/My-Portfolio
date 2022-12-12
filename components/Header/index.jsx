@@ -6,7 +6,7 @@ function Header() {
         <header className={styles.header}>
             <div className={styles.container}>
                 <div className={styles.profileImage}>
-                    <Image className={styles.image} src="/photos/1.jpg" height={180} width={180} alt=''/>
+                    <Image className={styles.image} src="/photos/profile-2.png" height={180} width={180} alt=''/>
                 </div>
                 <div className={styles.floatLeft}>
                     <h1 className={styles.name}>Lucas Lima</h1>

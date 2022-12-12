@@ -29,7 +29,7 @@ function Languages({styles}) {
                                 <span className={styles.level}>
                                     {value.level}
                                     <br />
-                                    {MakeStars(value.stars, styles)}
+                                    {/* {MakeStars(value.stars, styles)} */}
                                 </span>
                             </li>
                         )}

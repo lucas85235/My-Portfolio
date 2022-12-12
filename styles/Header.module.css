@@ -13,8 +13,8 @@
 }
 
 .image {
-    border-radius: 50%!important;
-    transform: rotate(-25deg);
+    /* border-radius: 50%!important; */
+    /* transform: rotate(-25deg); */
 }
 
 .floatLeft {
