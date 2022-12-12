@@ -18,7 +18,7 @@ const otherGames = [
     {
         title: "Lendas do Pebol",
         description: "This project was awarded the Feliciano Lana award, promoted by the Secretary of Culture and Creative Economy with resources made available by the Audir Blanc Law at the end of 2020. It is a one-on-one football game with characters from the Amazon region. Eight folkloric characters are the protagonists of this story, such as Boto, Curupira and Uirapuru. I work as a Programmer and Producer.",
-        link: "https://play.google.com/store/apps/details?id=com.madeinhouse.lendasdopebol&hl=pt_BR&gl=US",
+        link: "https://store.steampowered.com/app/2238340/Lendas_do_Pebol_Mythic_Football/",
         image: "/Projects/LendasDoPebol.png"
     },
     {
