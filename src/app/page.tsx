@@ -1,5 +1,3 @@
-// src/app/page.tsx (ou .jsx)
-
 import { HeaderBio } from '@/components/HeaderBio';
 import { ProjectItem } from '@/components/ProjectItem';
 import { Footer } from '@/components/Footer'; // Importe o novo componente

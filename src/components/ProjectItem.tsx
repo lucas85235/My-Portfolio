@@ -1,5 +1,3 @@
-// src/components/ProjectItem.tsx
-
 import React from 'react';
 import { Project } from '@/data/projects'; // Importe a interface do projeto
 

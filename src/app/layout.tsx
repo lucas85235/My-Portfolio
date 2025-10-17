@@ -1,12 +1,11 @@
 import './globals.css';
-import { Inter } from 'next/font/google'; // Importe a fonte que está sendo usada
+import { Inter } from 'next/font/google';
+import { Providers } from './providers'; // Importe o novo provedor
 
-// Configuração da fonte (mantenha como estiver se usou o setup padrão)
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Portfólio Gamedev | Seu Nome',
-  description: 'Portfólio de um Desenvolvedor de Jogos (Gamedev) focado em projetos.',
+  // ...
 };
 
 export default function RootLayout({
@@ -15,12 +14,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html>
+    <html lang="pt-BR" suppressHydrationWarning>
+      {/* O suppressHydrationWarning é necessário para o next-themes */}
       <body className={inter.className}>
-        {/* O div abaixo garante a largura máxima e o padding lateral */}
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          {children}
-        </div>
+        <Providers> {/* Envolva o conteúdo com o Provedor */}
+          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+            {children}
+          </div>
+        </Providers>
       </body>
     </html>
   );
