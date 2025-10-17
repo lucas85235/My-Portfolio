@@ -1,6 +1,8 @@
+// src/app/page.tsx (ou .jsx)
+
 import { HeaderBio } from '@/components/HeaderBio';
-// Importe o HeaderBio se estiver usando TS, para JS use:
-// import { HeaderBio } from '../components/HeaderBio';
+import { ProjectItem } from '@/components/ProjectItem'; // Importe o novo componente
+import { MOCK_PROJECTS } from '@/data/projects'; // Importe os dados
 
 export default function Home() {
   return (
@@ -8,14 +10,22 @@ export default function Home() {
       {/* 1. Header e Bio */}
       <HeaderBio />
 
-      {/* 2. Seção de Projetos (Virá na próxima etapa) */}
-      <section className="mt-8">
-        <h2 className="text-3xl font-bold mb-6 border-b pb-2">Trabalhos</h2>
-        {/* Placeholder para os projetos */}
-        <p className="text-gray-500">Próximo passo: Adicionar a lista de projetos!</p>
+      {/* 2. Seção de Projetos */}
+      <section className="pt-4 pb-16">
+        <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-50">
+          Trabalhos
+        </h2>
+
+        <div className="space-y-6">
+          {MOCK_PROJECTS.map((project) => (
+            // Renderiza um ProjectItem para cada projeto na lista
+            <ProjectItem key={project.id} project={project} />
+          ))}
+        </div>
+
       </section>
 
-      {/* 3. Footer (Virá depois da seção de projetos) */}
+      {/* 3. Footer (Próxima etapa) */}
     </main>
   );
 }
