@@ -1,14 +1,25 @@
-// tailwind.config.ts (ou .js)
-
 import type { Config } from 'tailwindcss';
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 const config: Config = {
-    darkMode: 'class', // <--- Garanta que está como 'class'
+    darkMode: 'class',
     content: [
         './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
         './src/components/**/*.{js,ts,jsx,tsx,mdx}',
         './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     ],
-    // ... outras configurações
+    theme: {
+        extend: {
+            fontFamily: {
+                sans: ['Inter', ...defaultTheme.fontFamily.sans], // Mantém Inter como primária
+                // Se quiser uma fonte serif para títulos:
+                // serif: ['Georgia', ...defaultTheme.fontFamily.serif],
+            },
+            // Adicione cores customizadas se quiser, ex: cor primária de link
+            colors: {
+                primary: '#0070f3', // Azul do Vercel/Next.js
+            },
+        },
+    },
 };
 export default config;

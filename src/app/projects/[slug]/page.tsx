@@ -65,23 +65,26 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             {/* Detalhes Técnicos e Link */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 border-b pb-8 border-gray-100 dark:border-gray-800">
 
-                <div>
-                    <h3 className="text-lg font-bold mb-2">Ano</h3>
-                    <p className="text-gray-700 dark:text-gray-300">{project.year}</p>
+                {/* Bloco do Ano */}
+                <div className="border-l pl-4 border-gray-200 dark:border-gray-700"> {/* Divisor visual */}
+                    <h3 className="text-xl font-extrabold mb-1 uppercase tracking-wider text-gray-500 dark:text-gray-400">Ano</h3>
+                    <p className="text-lg text-gray-900 dark:text-gray-50">{project.year}</p>
                 </div>
 
-                <div>
-                    <h3 className="text-lg font-bold mb-2">Tecnologias</h3>
-                    <p className="text-gray-700 dark:text-gray-300">{project.tech_stack.join(', ')}</p>
+                {/* Bloco de Tecnologias */}
+                <div className="border-l pl-4 border-gray-200 dark:border-gray-700"> {/* Divisor visual */}
+                    <h3 className="text-xl font-extrabold mb-1 uppercase tracking-wider text-gray-500 dark:text-gray-400">Tecnologias</h3>
+                    <p className="text-lg text-gray-900 dark:text-gray-50">{project.tech_stack.join(', ')}</p>
                 </div>
 
-                <div>
-                    <h3 className="text-lg font-bold mb-2">Link</h3>
+                {/* Bloco do Link */}
+                <div className="border-l pl-4 border-gray-200 dark:border-gray-700"> {/* Divisor visual */}
+                    <h3 className="text-xl font-extrabold mb-1 uppercase tracking-wider text-gray-500 dark:text-gray-400">Link</h3>
                     <a
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
+                        className="text-lg text-blue-600 dark:text-blue-400 hover:underline font-bold transition-colors"
                     >
                         Ver Jogo/Repositório →
                     </a>

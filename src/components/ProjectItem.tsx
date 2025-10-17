@@ -12,7 +12,10 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
     return (
         <Link
             href={internalLink}
-            className="block p-4 sm:p-6 rounded-lg transition-colors duration-300 hover:bg-gray-50 dark:hover:bg-gray-800/50 group border border-transparent hover:border-gray-200 dark:hover:border-gray-700"
+            className="block p-4 sm:p-6 rounded-xl transition-all duration-300 ease-in-out 
+                hover:bg-gray-50 dark:hover:bg-gray-800/50 group 
+                border border-transparent hover:border-gray-200 dark:hover:border-gray-700 
+                transform hover:scale-[1.01] hover:shadow-lg"
         >
             <div className="flex flex-col-reverse md:flex-row gap-6">
 
