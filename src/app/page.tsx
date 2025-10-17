@@ -1,7 +1,8 @@
 import { HeaderBio } from '@/components/HeaderBio';
 import { ProjectItem } from '@/components/ProjectItem';
+import { AboutSection } from '@/components/AboutSection'; // <-- Novo Import
 import { Footer } from '@/components/Footer'; // Importe o novo componente
-import { MOCK_PROJECTS } from '@/data/projects'; 
+import { MOCK_PROJECTS } from '@/data/projects';
 
 export default function Home() {
   return (
@@ -14,17 +15,21 @@ export default function Home() {
         <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-50">
           Trabalhos
         </h2>
-
         <div className="space-y-6">
           {MOCK_PROJECTS.map((project) => (
             <ProjectItem key={project.id} project={project} />
           ))}
         </div>
-
       </section>
 
-      {/* 3. Footer */}
-      <Footer /> 
+      {/* 3. Seção Sobre Mim (ABOUT) */}
+      <AboutSection />
+
+      {/* 4. Footer (CONTACT - vamos colocar o ID aqui) */}
+      <div id="contact">
+        <Footer />
+      </div>
+
     </main>
   );
 }
