@@ -18,14 +18,11 @@ export default function RootLayout({
     <html lang="pt-BR" suppressHydrationWarning>
       <body className={inter.className}>
         <Providers>
-
-          {/* 1. Navbar (Fora do contêiner de largura limitada) */}
           <Navbar />
 
-          {/* 2. Conteúdo Principal (Container de largura limitada) */}
-          {/* Nota: Adicione 'mt-16' (margin top de 4rem) no wrapper do conteúdo 
-             para que ele não fique escondido sob a Navbar fixa de 4rem de altura (h-16) */}
-          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 mt-16">
+          {/* Remova o 'max-w-3xl' daqui e adicione-o apenas onde o conteúdo deve ser limitado. */}
+          {/* O conteúdo do HeaderBio será tratado separadamente para ocupar a largura total. */}
+          <div className="mt-0"> {/* Apenas a margem para compensar a Navbar */}
             {children}
           </div>
 
