@@ -1,15 +1,14 @@
-// src/data/projects.ts
-
 export interface Project {
     id: number;
     title: string;
     description: string;
-    tags: string[]; // ex: Unity, C#, Shader, 2D
-    link: string; // URL do itch.io, GitHub, etc.
+    tags: string[];
+    link: string;
     year: number;
+    image: string; // <-- Novo campo para o caminho da imagem
 }
 
-// Dados Mock
+// Dados Mock Atualizados (Adapte os caminhos com suas imagens)
 export const MOCK_PROJECTS: Project[] = [
     {
         id: 1,
@@ -18,6 +17,7 @@ export const MOCK_PROJECTS: Project[] = [
         tags: ['Unity', 'C#', '2D', 'Gameplay'],
         link: 'https://seuitchio.itch.io/starship',
         year: 2024,
+        image: '/images/Arcade.png', // Exemplo: Imagem em public/images/starship.jpg
     },
     {
         id: 2,
@@ -26,6 +26,7 @@ export const MOCK_PROJECTS: Project[] = [
         tags: ['Unreal Engine 5', 'C++', '3D', 'AI'],
         link: 'https://seugithub.com/echoes',
         year: 2023,
+        image: '/images/Arcade.png', // Exemplo: Imagem em public/images/echoes.jpg
     },
     {
         id: 3,
@@ -34,5 +35,6 @@ export const MOCK_PROJECTS: Project[] = [
         tags: ['Next.js', 'TypeScript', 'Tooling', 'React'],
         link: 'https://seusite.com/pixelpainter',
         year: 2022,
+        image: '/images/Arcade.png', // Exemplo: Imagem em public/images/pixel_painter.png
     },
 ];
