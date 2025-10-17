@@ -5,7 +5,11 @@ export interface Project {
     tags: string[];
     link: string;
     year: number;
-    image: string; // <-- Novo campo para o caminho da imagem
+    image: string;
+    slug: string; // <-- Novo campo para a URL
+    // Adicione campos de detalhes para uso na página interna:
+    full_description: string;
+    tech_stack: string[]; // Lista detalhada de tecnologias
 }
 
 // Dados Mock Atualizados (Adapte os caminhos com suas imagens)
@@ -13,11 +17,14 @@ export const MOCK_PROJECTS: Project[] = [
     {
         id: 1,
         title: 'Starship Defender',
-        description: 'Um jogo de tiro espacial 2D rápido e baseado em ondas. Desenvolvido em Unity com foco em otimização de performance.',
+        description: 'Um jogo de tiro espacial 2D rápido e baseado em ondas...',
         tags: ['Unity', 'C#', '2D', 'Gameplay'],
         link: 'https://seuitchio.itch.io/starship',
         year: 2024,
-        image: '/images/Arcade.png', // Exemplo: Imagem em public/images/starship.jpg
+        image: '/images/Arcade.png',
+        slug: 'starship-defender', // <-- SLUG
+        full_description: "Este projeto foi um exercício de otimização de script e gerenciamento de memória em Unity. O foco principal foi o sistema de geração procedural de inimigos e a curva de dificuldade dinâmica, implementada com o padrão de projeto Observer.",
+        tech_stack: ['Unity 2023 LTS', 'C#', 'DOTS', 'Shader Graph', 'Git'],
     },
     {
         id: 2,
@@ -27,6 +34,9 @@ export const MOCK_PROJECTS: Project[] = [
         link: 'https://seugithub.com/echoes',
         year: 2023,
         image: '/images/Arcade.png', // Exemplo: Imagem em public/images/echoes.jpg
+        slug: 'echoes-avoid', // <-- SLUG
+        full_description: "Este projeto foi um exercício de otimização de script e gerenciamento de memória em Unity. O foco principal foi o sistema de geração procedural de inimigos e a curva de dificuldade dinâmica, implementada com o padrão de projeto Observer.",
+        tech_stack: ['Unity 2023 LTS', 'C#', 'DOTS', 'Shader Graph', 'Git'],
     },
     {
         id: 3,
@@ -36,5 +46,8 @@ export const MOCK_PROJECTS: Project[] = [
         link: 'https://seusite.com/pixelpainter',
         year: 2022,
         image: '/images/Arcade.png', // Exemplo: Imagem em public/images/pixel_painter.png
+        slug: 'pixel-painter', // <-- SLUG
+        full_description: "Este projeto foi um exercício de otimização de script e gerenciamento de memória em Unity. O foco principal foi o sistema de geração procedural de inimigos e a curva de dificuldade dinâmica, implementada com o padrão de projeto Observer.",
+        tech_stack: ['Unity 2023 LTS', 'C#', 'DOTS', 'Shader Graph', 'Git'],
     },
 ];

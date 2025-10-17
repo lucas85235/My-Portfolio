@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Project } from '@/data/projects'; // Importe a interface do projeto
 
 interface ProjectItemProps {
@@ -7,11 +8,10 @@ interface ProjectItemProps {
 }
 
 export const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
+    const internalLink = `/projects/${project.slug}`;
     return (
-        <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
+        <Link
+            href={internalLink}
             className="block p-4 sm:p-6 rounded-lg transition-colors duration-300 hover:bg-gray-50 dark:hover:bg-gray-800/50 group border border-transparent hover:border-gray-200 dark:hover:border-gray-700"
         >
             <div className="flex flex-col-reverse md:flex-row gap-6">
@@ -59,6 +59,6 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
                 </div>
 
             </div>
-        </a>
+        </Link>
     );
 };
