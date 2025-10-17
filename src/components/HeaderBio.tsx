@@ -1,15 +1,8 @@
 import React from 'react';
-import { ThemeToggle } from './ThemeToggle'; // Importe o novo Toggle
 
 export const HeaderBio: React.FC = () => {
     return (
-        <header className="pt-8 pb-16 md:pt-16 md:pb-24">
-
-            {/* Contêiner para o Toggle (Canto Superior Direito) */}
-            <div className="flex justify-end -mr-2 mb-8"> {/* Ajusta a margem para fora do contêiner */}
-                <ThemeToggle />
-            </div>
-
+        <header className="py-16 md:py-24">
             {/* Título Principal */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4">
                 [Seu Nome] — Gamedev
