@@ -1,33 +1,27 @@
 import { getProjectData, getAllProjectsMeta } from '@/lib/mdx';
-import { MDXRenderer } from '@/components/MDXRenderer'; // NOVO: O Componente de Renderização
-import { serialize } from 'next-mdx-remote/serialize'; // Import para compilar o MDX
-import Image from 'next/image';
+import { MDXContent } from '@/components/MDXContent';
 import Link from 'next/link';
-// O restante dos imports (Container, Link, Image)
+import Image from 'next/image';
 import { Container } from '@/components/Container';
-import { notFound } from 'next/navigation';
 
 interface ProjectPageProps {
-    params: {
+    params: Promise<{
         slug: string;
-    };
+    }>;
 }
 
-// 1. Geração de Parâmetros Estáticos (Continua igual)
 export async function generateStaticParams() {
-    const projects = getAllProjectsMeta(); // Obtém todos os metadados
+    const projects = getAllProjectsMeta();
     return projects.map((project) => ({
         slug: project.slug,
     }));
 }
 
-// 2. Componente Principal (Agora Assíncrono para buscar e compilar)
 export default async function ProjectPage({ params }: ProjectPageProps) {
-    const { slug } = params;
+    const { slug } = await params;
     const projectData = getProjectData(slug);
 
     if (!projectData) {
-        // Retorna 404
         return (
             <main className="py-24">
                 <h1 className="text-4xl font-bold">404 - Projeto não encontrado</h1>
@@ -37,11 +31,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             </main>
         );
     }
-
-    // Compila o conteúdo MDX para que possa ser renderizado pelo MDXRemote
-    const mdxSource = await serialize(projectData.content, {
-        parseFrontmatter: false, // O frontmatter já foi extraído pelo gray-matter
-    });
 
     return (
         <Container className="pt-20 pb-32">
@@ -77,7 +66,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             </div>
 
             {/* ⭐️ Renderização do Conteúdo MDX ⭐️ */}
-            <MDXRenderer source={mdxSource} />
+            <MDXContent content={projectData.content} />
 
         </Container>
     );

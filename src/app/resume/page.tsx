@@ -1,15 +1,12 @@
 import React from 'react';
 import { Container } from '@/components/Container';
-import Link from 'next/link';
 
-// Metadados para a página (ajuda no SEO)
 export const metadata = {
     title: 'Currículo - [Seu Nome]',
     description: 'Visualização da experiência profissional e acadêmica como Game Developer.',
 };
 
 const ResumePage: React.FC = () => {
-    // Substitua pelo caminho real do seu PDF na pasta /public
     const RESUME_PDF_PATH = '/files/seu_curriculo.pdf';
 
     return (

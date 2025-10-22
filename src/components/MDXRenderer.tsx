@@ -1,69 +1,120 @@
-'use client';
-
-import { MDXRemote } from 'next-mdx-remote';
+import { getProjectData, getAllProjectsMeta } from '@/lib/mdx';
+import { MDXContent } from '@/components/MDXContent';
 import Image from 'next/image';
-import React from 'react';
+import Link from 'next/link';
+import { Container } from '@/components/Container';
+import { notFound } from 'next/navigation';
 
-interface MDXRendererProps {
-    source: any;
+interface ProjectPageProps {
+    params: Promise<{
+        slug: string;
+    }>;
 }
 
-// -------------------------------------------------------------------
-// ⭐️ NOVO COMPONENTE: CustomLink
-// -------------------------------------------------------------------
-const CustomLink: React.FC<React.AnchorHTMLAttributes<HTMLAnchorElement>> = (props) => {
-    const { href, children } = props;
+// 1. Geração de Parâmetros Estáticos
+export async function generateStaticParams() {
+    const projects = getAllProjectsMeta();
+    return projects.map((project) => ({
+        slug: project.slug,
+    }));
+}
 
-    // Verifica se o link é externo (começa com http/https)
-    const isExternal = href && (href.startsWith('http://') || href.startsWith('https://'));
+// 2. Componente Principal
+export default async function ProjectPage({ params }: ProjectPageProps) {
+    const { slug } = await params;
+    
+    const projectData = getProjectData(slug);
 
-    if (isExternal) {
-        // Se for externo, adiciona target="_blank" e rel de segurança
-        return (
-            <a
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
-            >
-                {children}
-            </a>
-        );
+    if (!projectData) {
+        notFound();
     }
 
-    // Se for interno, usa a tag <a> padrão ou <Link> do Next.js se preferir
     return (
-        <a
-            href={href}
-            className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
-        >
-            {children}
-        </a>
+        <Container className="pt-20 pb-32">
+            {/* Botão Voltar */}
+            <Link 
+                href="/" 
+                className="flex items-center text-lg font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors mb-8"
+            >
+                <svg 
+                    className="w-5 h-5 mr-2" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                >
+                    <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth={2} 
+                        d="M10 19l-7-7m0 0l7-7m-7 7h18" 
+                    />
+                </svg>
+                ← Voltar para a Home
+            </Link>
+
+            {/* Título e Descrição */}
+            <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight mb-4">
+                {projectData.title}
+            </h1>
+            <p className="text-xl text-gray-700 dark:text-gray-300 mb-8">
+                {projectData.description}
+            </p>
+
+            {/* Imagem de Capa */}
+            <div className="mb-12">
+                <Image
+                    src={projectData.image}
+                    alt={`Capa do projeto ${projectData.title}`}
+                    width={900}
+                    height={500}
+                    className="w-full h-auto object-cover rounded-xl shadow-2xl"
+                />
+            </div>
+
+            {/* Detalhes Técnicos */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 border-b pb-8 border-gray-100 dark:border-gray-800">
+                {/* Ano */}
+                <div>
+                    <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase mb-2">
+                        Ano
+                    </h3>
+                    <p className="text-lg font-medium">{projectData.year}</p>
+                </div>
+
+                {/* Tecnologias */}
+                <div>
+                    <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase mb-2">
+                        Tecnologias
+                    </h3>
+                    <p className="text-lg font-medium">
+                        {projectData.tech_stack.join(', ')}
+                    </p>
+                </div>
+
+                {/* Link */}
+                <div>
+                    <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase mb-2">
+                        Link
+                    </h3>
+                    {projectData.link ? (
+                        <a
+                            href={projectData.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-lg font-medium text-blue-600 dark:text-blue-400 hover:underline"
+                        >
+                            Ver Projeto →
+                        </a>
+                    ) : (
+                        <p className="text-lg font-medium text-gray-400">
+                            Indisponível
+                        </p>
+                    )}
+                </div>
+            </div>
+
+            {/* ⭐ Renderização do Conteúdo MDX */}
+            <MDXContent content={projectData.content} />
+        </Container>
     );
-};
-// -------------------------------------------------------------------
-
-
-// Mapeamento de componentes customizados que podem ser usados dentro do MDX
-const components = {
-    // Substitui a tag <img> nativa por <Image> do Next.js
-    img: (props: any) => (
-        <Image
-            className="rounded-lg shadow-xl my-8"
-            alt={props.alt || ''}
-            width={900}
-            height={500}
-            {...props}
-        />
-    ),
-    // ⭐️ SUBSTITUI A TAG <a> PADRÃO PELO SEU CUSTOM LINK
-    a: CustomLink,
-};
-
-export const MDXRenderer: React.FC<MDXRendererProps> = ({ source }) => {
-    return (
-        <div className="mdx-content max-w-none">
-            <MDXRemote {...source} components={components} />
-        </div>
-    );
-};
+}
