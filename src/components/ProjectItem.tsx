@@ -1,10 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Project } from '@/data/projects'; // Importe a interface do projeto
+import { ProjectMetadata } from '@/lib/mdx'; // <-- NOVO IMPORT
 
 interface ProjectItemProps {
-    project: Project;
+  project: ProjectMetadata; // <-- Use a nova interface
 }
 
 export const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
@@ -39,7 +39,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
 
                     {/* Tags */}
                     <div className="mt-3 flex flex-wrap gap-2">
-                        {project.tags.map((tag) => (
+                        {(project.tags || []).map((tag) => (
                             <span
                                 key={tag}
                                 className="text-xs font-medium bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
