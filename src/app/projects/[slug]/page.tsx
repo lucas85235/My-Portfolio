@@ -4,6 +4,8 @@ import { serialize } from 'next-mdx-remote/serialize'; // Import para compilar o
 import Image from 'next/image';
 import Link from 'next/link';
 // O restante dos imports (Container, Link, Image)
+import { Container } from '@/components/Container';
+import { notFound } from 'next/navigation';
 
 interface ProjectPageProps {
     params: {
@@ -21,7 +23,8 @@ export async function generateStaticParams() {
 
 // 2. Componente Principal (Agora Assíncrono para buscar e compilar)
 export default async function ProjectPage({ params }: ProjectPageProps) {
-    const projectData = getProjectData(params.slug);
+    const { slug } = params;
+    const projectData = getProjectData(slug);
 
     if (!projectData) {
         // Retorna 404
@@ -41,12 +44,12 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     });
 
     return (
-        <main className="pt-20 pb-32">
+        <Container className="pt-20 pb-32">
 
             {/* Botão Voltar (Mantido) */}
             <Link href="/" className="flex items-center text-lg font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors mb-8">
                 {/* ... SVG ... */}
-                Voltar para os Trabalhos
+                ← Voltar para a Home
             </Link>
 
             {/* Título e Capa do Projeto (Usando os Metadados) */}
@@ -76,6 +79,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             {/* ⭐️ Renderização do Conteúdo MDX ⭐️ */}
             <MDXRenderer source={mdxSource} />
 
-        </main>
+        </Container>
     );
 }

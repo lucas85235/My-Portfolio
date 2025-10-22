@@ -34,3 +34,15 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.mdx-content p {
+    margin-bottom: 1.25rem; /* Adiciona espaçamento vertical entre parágrafos */
+    line-height: 1.75; /* Aumenta a altura da linha para melhor leitura */
+}
+
+.mdx-content h1, 
+.mdx-content h2, 
+.mdx-content h3 {
+    margin-top: 1.5em; /* Espaço antes do título */
+    margin-bottom: 0.75em; /* Espaço depois do título */
+}

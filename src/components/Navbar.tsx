@@ -1,15 +1,10 @@
-// src/components/Navbar.tsx
-
 'use client';
 
 import React from 'react';
 import Link from 'next/link';
 import { ThemeToggle } from './ThemeToggle';
-import { usePathname } from 'next/navigation'; // <-- Importe o hook para saber a rota atual
+import { usePathname } from 'next/navigation';
 
-// Definição dos links:
-// - Os links internos (Âncoras) têm 'isAnchor: true'
-// - Os links externos têm 'isAnchor: false'
 const navLinks = [
     { name: 'About', href: '#about', isAnchor: true },
     { name: 'Works', href: '#works', isAnchor: true }, // Mudei para 'Works'
@@ -28,7 +23,7 @@ export const Navbar: React.FC = () => {
 
                     {/* Logo / Nome */}
                     <Link href="/" className="flex-shrink-0 text-xl font-extrabold tracking-tight text-gray-900 dark:text-gray-50 hover:opacity-80 transition-opacity">
-                        [Seu Nome]
+                        Lucas Lima
                     </Link>
 
                     {/* Links de Navegação */}
@@ -50,12 +45,12 @@ export const Navbar: React.FC = () => {
 
                         {/* Link Social/Follow (mantendo como estava) */}
                         <a
-                            href="https://twitter.com/seuusuario"
+                            href="https://www.linkedin.com/in/lucas85235/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-500 transition-colors border-l pl-6 border-gray-200 dark:border-gray-700"
                         >
-                            Follow @SeuUsuario
+                            My Linkefin
                         </a>
 
                         <ThemeToggle />

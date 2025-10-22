@@ -21,15 +21,24 @@ export default async function Home() {
     <>
       {/* 1. Header e Bio */}
       <div id="home-top">
-        <HeaderBio />
+        <HeaderBio/>
       </div>
 
-      {/* 2. Seção de Projetos (WORKS) */}
-      <Container id="works" className="pt-24 pb-16">
-        <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-50">
-          Trabalhos
-        </h2>
+      {/* 3. Seção Sobre Mim (ABOUT) */}
+      <Container id="about">
+        <AboutSection/>
+      </Container>
 
+      {/* 2. Seção de Projetos (WORKS) */}
+      <Container id="works">
+        <h2 className="text-3xl font-bold mb-3 text-gray-900 dark:text-gray-50">
+          Professional Projects
+        </h2>
+        <h3 className=" mb-6 text-gray-900 dark:text-gray-50">
+          Click on the tiles to learn more about each project.
+        </h3>
+
+        {/* className={`mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 ${className}` */}
         <div className="space-y-6">
           {/* Mapeamento dos projetos obtidos do MDX */}
           {projects.map((project) => (
@@ -40,13 +49,8 @@ export default async function Home() {
         </div>
       </Container>
 
-      {/* 3. Seção Sobre Mim (ABOUT) */}
-      <Container id="about" className="pt-16 pb-16 border-t border-gray-100 dark:border-gray-800">
-        <AboutSection />
-      </Container>
-
       {/* 4. Footer (CONTACT) */}
-      <Container id="contact" className="pt-16 py-0">
+      <Container id="contact">
         <Footer />
       </Container>
 
