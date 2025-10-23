@@ -2,7 +2,7 @@ import React from 'react';
 
 export const AboutSection: React.FC = () => {
     return (
-        <section id="about" className="pt-16 pb-16 border-t border-gray-100 dark:border-gray-800">
+        <section id="about" className="pt-16 border-t border-gray-100 dark:border-gray-800">
             <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-50">
                 About Me
             </h2>

@@ -1,66 +1,80 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ProjectMetadata } from '@/lib/mdx'; // <-- NOVO IMPORT
+import { ProjectMetadata } from '@/lib/mdx';
 
 interface ProjectItemProps {
-  project: ProjectMetadata; // <-- Use a nova interface
+  project: ProjectMetadata;
 }
 
 export const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
     const internalLink = `/projects/${project.slug}`;
+    
     return (
         <Link
             href={internalLink}
-            className="block p-4 sm:p-6 rounded-xl transition-all duration-300 ease-in-out 
-                hover:bg-gray-50 dark:hover:bg-gray-800/50 group 
-                border border-transparent hover:border-gray-200 dark:hover:border-gray-700 
-                transform hover:scale-[1.01] hover:shadow-lg"
+            className="group block rounded-xl overflow-hidden bg-white dark:bg-gray-900 
+                border border-gray-200 dark:border-gray-800
+                transition-all duration-300 ease-in-out 
+                hover:shadow-2xl hover:scale-[1.02] hover:-translate-y-1
+                hover:border-gray-300 dark:hover:border-gray-700"
         >
-            <div className="flex flex-col-reverse md:flex-row gap-6">
+            {/* Imagem de Preview */}
+            <div className="relative w-full aspect-[16/10] overflow-hidden bg-gray-100 dark:bg-gray-800">
+                <Image
+                    src={project.image}
+                    alt={`Prévia do projeto ${project.title}`}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+                
+                {/* Ano no canto superior direito */}
+                <div className="absolute top-3 right-3 bg-black/70 text-white text-xs font-bold px-3 py-1 rounded-full">
+                    {project.year}
+                </div>
+            </div>
 
-                {/* Conteúdo de Texto */}
-                <div className="flex-grow">
+            {/* Conteúdo */}
+            <div className="p-5 flex flex-col">
+                {/* Título */}
+                <h3 className="text-xl font-bold text-gray-900 dark:text-gray-50 
+                    group-hover:text-blue-600 dark:group-hover:text-blue-400 
+                    transition-colors line-clamp-2 mb-2">
+                    {project.title}
+                </h3>
 
-                    <div className="flex justify-between items-start">
-                        {/* Título e Ano */}
-                        <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-gray-50 group-hover:underline">
-                            {project.title}
-                        </h3>
-                        <span className="text-sm font-medium text-gray-500 dark:text-gray-400 ml-4 pt-1 hidden md:block">
-                            {project.year}
+                {/* Descrição */}
+                <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-3 mb-4">
+                    {project.description}
+                </p>
+
+                {/* Tags - SEMPRE RENDERIZA */}
+                <div className="flex flex-wrap gap-2 mb-3 min-h-[28px]">
+                    {project.tags.slice(0, 3).map((tag, index) => (
+                        <span
+                            key={`${tag}-${index}`}
+                            className="text-xs font-medium bg-gray-100 dark:bg-gray-800 
+                                text-gray-700 dark:text-gray-300 px-2.5 py-1 rounded-full"
+                        >
+                            {tag}
                         </span>
-                    </div>
-
-                    {/* Descrição */}
-                    <p className="mt-2 text-base text-gray-600 dark:text-gray-400">
-                        {project.description}
-                    </p>
-
-                    {/* Tags */}
-                    <div className="mt-3 flex flex-wrap gap-2">
-                        {(project.tags || []).map((tag) => (
-                            <span
-                                key={tag}
-                                className="text-xs font-medium bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
-                            >
-                                {tag}
-                            </span>
-                        ))}
-                    </div>
+                    ))}
+                    {project.tags.length > 3 && (
+                        <span className="text-xs font-medium text-gray-500 dark:text-gray-400 px-2.5 py-1">
+                            +{project.tags.length - 3}
+                        </span>
+                    )}
                 </div>
 
-                {/* Imagem de Prévia */}
-                <div className="w-full md:w-56 flex-shrink-0">
-                    <Image
-                        src={project.image}
-                        alt={`Prévia do projeto ${project.title}`}
-                        width={224} // 56 * 4 (usando a largura definida no w-56 do Tailwind)
-                        height={150} // Ajuste a altura para um aspecto razoável (3:2)
-                        className="w-full h-auto object-cover rounded-md shadow-lg"
-                    />
-                </div>
-
+                {/* Tech Stack */}
+                {project.tech_stack && project.tech_stack.length > 0 && (
+                    <div className="pt-3 border-t border-gray-100 dark:border-gray-800">
+                        <p className="text-xs text-gray-500 dark:text-gray-400 line-clamp-1">
+                            <span className="font-semibold">Tech:</span> {project.tech_stack.join(', ')}
+                        </p>
+                    </div>
+                )}
             </div>
         </Link>
     );

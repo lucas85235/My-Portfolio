@@ -9,7 +9,7 @@ interface ContainerProps {
 export const Container: React.FC<ContainerProps> = ({ children, className = '', id }) => {
     // Este é o container que limita a largura do seu conteúdo
     return (
-        <div id={id} className={`mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 ${className}`}>
+        <div id={id} className={`mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 ${className}`}>
             {children}
         </div>
     );
