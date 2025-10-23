@@ -17,6 +17,9 @@ export const AboutSection: React.FC = () => {
                 <p>
                     If you have an idea that needs to take shape whether a short experiment or a larger project I want to participate. I'm based in Manaus and open to remote work and collaborations.
                 </p>
+                <p>
+                    Contact: lucas85235@gmail.com
+                </p>
             </div>
         </section>
     );

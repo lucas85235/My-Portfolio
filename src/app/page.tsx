@@ -3,11 +3,9 @@ import { ProjectItem } from '@/components/ProjectItem';
 import { AboutSection } from '@/components/AboutSection';
 import { Footer } from '@/components/Footer';
 import { Container } from '@/components/Container';
-
 import { getAllProjectsMeta } from '@/lib/mdx';
 
 export default async function Home() {
-  // getAllProjectsMeta is async in the recommended mdx.ts — await it
   const projects = await getAllProjectsMeta();
 
   return (

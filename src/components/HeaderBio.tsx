@@ -48,10 +48,10 @@ export const HeaderBio: React.FC = () => {
                 {/* Conteúdo: Seu nome/título/CTA, sempre por cima */}
                 <div className="text-center text-white p-8 z-20">
                     <h1 className="text-4xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight mb-6 drop-shadow-xl">
-                        [Seu Nome]
+                        Lucas Lima
                     </h1>
                     <p className="text-xl sm:text-2xl text-gray-200 max-w-xl drop-shadow-md">
-                        Game Developer & Systems Designer
+                        Game Developer & Software Engineer
                     </p>
                     {/* Você pode adicionar um CTA aqui se quiser */}
                 </div>

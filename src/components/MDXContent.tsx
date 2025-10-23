@@ -4,6 +4,8 @@ import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
+import VideoPlayer from './VideoPlayer';
+import remarkGfm from 'remark-gfm';
 
 interface MDXContentProps {
     content: string;
@@ -72,6 +74,7 @@ const CustomImage: React.FC<CustomImageProps> = (props) => {
 const components = {
     img: CustomImage,
     a: CustomLink,
+    VideoPlayer,
 };
 
 export const MDXContent: React.FC<MDXContentProps> = ({ content }) => {
@@ -81,6 +84,9 @@ export const MDXContent: React.FC<MDXContentProps> = ({ content }) => {
         const compileMDX = async () => {
             const compiled = await serialize(content, {
                 parseFrontmatter: false,
+                mdxOptions: {
+                    remarkPlugins: [remarkGfm],
+                },
             });
             setMdxSource(compiled);
         };

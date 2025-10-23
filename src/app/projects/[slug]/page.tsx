@@ -26,7 +26,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <main className="py-24">
                 <h1 className="text-4xl font-bold">404 - Projeto não encontrado</h1>
                 <Link href="/" className="mt-6 inline-block text-blue-600 hover:underline">
-                    ← Voltar para a Home
+                    ← Return to Home
                 </Link>
             </main>
         );
@@ -38,7 +38,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             {/* Botão Voltar (Mantido) */}
             <Link href="/" className="flex items-center text-lg font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors mb-8">
                 {/* ... SVG ... */}
-                ← Voltar para a Home
+                ← Return to Home
             </Link>
 
             {/* Título e Capa do Projeto (Usando os Metadados) */}

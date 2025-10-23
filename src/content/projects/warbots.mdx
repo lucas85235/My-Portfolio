@@ -1,28 +1,73 @@
 ---
-title: Warbots
-description: Um Card Game estratégico baseado em turno, inspirado em medabots.
-tags: ["Card Game", "Estratégia", "Táticas", "Game Jam"]
-link: "https://darksardinha.itch.io/warbots"
-year: 2022
-image: "/images/Warbots.png" 
+title: "Warbots"
 slug: "warbots"
-tech_stack: ["Unity", "C#", "UI/UX Design", "Game Jam Plus 2021"]
+year: "2022"
+description: A turn-based strategic Card Game, inspired by Medabots.
+image: "/images/WarbotsCombat.jpg"
+tags:
+  - Cardgame
+  - Multiplayer
+  - Deckbuilding
+tech_stack:
+  - Unity3D
+  - C#
+  - Netcode (custom)
+status: "Prototype (Gamejam+ 2022)"
 ---
 
-# Visão Geral do Projeto
+## **Summary**
+Warbots is a competitive, real-time card game prototype where each player builds a modular robot that determines their deck and playstyle. The version delivered at Gamejam+ 2022 proved the core loop (construction, rapid card selection, and simultaneous resolution), validating the competitive potential and appeal for quick, tense matches.
 
-**Warbots** é um *Card Game* de estratégia baseado em turno desenvolvido durante a edição **2021/2022 do Game Jam Plus**. O projeto foca em táticas e planejamento, onde o jogador deve usar robôs de combate e cartas de ação para superar o oponente.
+<VideoPlayer
+  src="/videos/WarbotsTrailer.mp4"
+  title="Warbots Gameplay Trailer"
+/>
 
-## Desenvolvimento e Escopo da Game Jam
+---
 
-O escopo da Game Jam exigiu um desenvolvimento rápido e funcional. O foco principal estava em:
+## **Technical Systems & My Role**
 
-* **Design do Sistema de Cartas:** Criar regras claras e balanceadas para o deck, custo de mana e efeitos de cartas, garantindo profundidade estratégica.
-* **Implementação da UI:** Desenvolver uma interface de usuário intuitiva (usando **Unity UI**) que fosse clara e que permitisse a rápida compreensão das regras do jogo de cartas.
-* **Lógica de Turnos:** Implementar o *state machine* para gerenciar o fluxo de turnos, fases de compra de cartas e ações de combate.
+In this project, I acted as the **primary programmer and prototypist** for the central mechanics. My key focus was building the competitive core loop while ensuring design flexibility.
 
-## Aprendizados Chave
+* **Core Systems Implementation (C# / ScriptableObjects):**
+    * Coded the **Modular Robot Construction** (5-slot system) which drives the **Automatic Deck Generation** (~20 cards) and determines in-game synergies.
+    * Implemented the **Short Turn Loop** (20s card selection) and the **Deterministic Resolution** logic, ensuring consistent outcomes for simultaneous actions.
+    * Used **ScriptableObjects** extensively for all card and part data to simplify balancing and allow for *hot-reloads*.
+* **Prototyping & Iteration Quality:**
+    * Developed **Editor Tools** (*inspector helpers*, simple importers) to empower designers to adjust parameters without requiring recompilation.
+    * Conducted rapid **Playtest Cycles** (collecting basic metrics) and learned that small changes in costs/time profoundly impact player decisions.
+    * Prioritized **simple, reliable solutions** (e.g., using a *simple authoritative server* for the prototype) to validate concepts quickly, even when it meant sacrificing advanced features like high latency tolerance.
 
-Este projeto foi crucial para aprimorar a capacidade de iterar rapidamente em mecânicas complexas e entender como o design de jogos de mesa pode ser traduzido de forma eficaz para um ambiente digital.
+---
 
-[Acesse a página do Warbots no Itch.io](https://darksardinha.itch.io/warbots)
+## Network and Multiplayer Architecture
+
+The game used a **Simple Authoritative Architecture** to ensure the integrity of simultaneous turns.
+
+* **Message Flow:** The process is based on a **logical tick per turn** (not continuous). The server resolves actions deterministically (in a fixed order) after receiving the client's choices.
+* **Communication:** **Serialization** uses a simple binary format for *snapshots* and *diffs*. **Transport** used TCP/HTTP in the prototype, but **UDP** is recommended for production to reduce latency in real-time games.
+* **Limitations and Learnings:**
+    * A simple authoritative architecture exposes players to *delays*.
+    * The prototype was not prepared for many simultaneous games (*scalability*) nor for *failover*/replication.
+    * Security is limited to *sanity checks*; a final product requires more robust validations and anti-cheat measures.
+
+<VideoPlayer
+  src="/videos/WarbotsMultiplayer.mp4"
+  title="Warbots Multiplayer and Synchronization Demo"
+/>
+
+---
+
+## Awards & Validation
+
+- **Winner — Gamejam+ Manaus 2022** (1st place local).
+- **Gazeus Award** — "Fast and Addictive Games".
+- **Finalist — BIG Festival 2022** (Ripio / Blockchain integration category).
+
+![Awards](/images/WarbotsPremiation.jpg)
+
+---
+
+## Playable Prototype
+
+[Play the prototype ↗](https://darksardinha.itch.io/warbots)
