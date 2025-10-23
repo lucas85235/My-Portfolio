@@ -2,21 +2,23 @@
 title: "Warbots"
 slug: "warbots"
 year: "2022"
-description: A turn-based strategic Card Game, inspired by Medabots.
+description: A strategic turn-based Card Game, inspired by Medabots.
 image: "/images/WarbotsCombat.jpg"
 tags:
-  - Cardgame
-  - Multiplayer
-  - Deckbuilding
+  - prototype
+  - gameplay
+  - multiplayer
 tech_stack:
   - Unity3D
   - C#
   - Netcode (custom)
+  - DOTS (experimental)
+  - ScriptableObjects
 status: "Prototype (Gamejam+ 2022)"
 ---
 
-## **Summary**
-Warbots is a competitive, real-time card game prototype where each player builds a modular robot that determines their deck and playstyle. The version delivered at Gamejam+ 2022 proved the core loop (construction, rapid card selection, and simultaneous resolution), validating the competitive potential and appeal for quick, tense matches.
+## **Summary & Core Gameplay**
+Warbots is a competitive, real-time card game prototype where each player assembles a modular robot that determines their deck and playstyle. The version delivered at Gamejam+ 2022 proved the **core loop** (construction, rapid card selection, and simultaneous resolution), validating its competitive potential and appeal for fast, tense matches.
 
 <VideoPlayer
   src="/videos/WarbotsTrailer.mp4"
@@ -25,44 +27,43 @@ Warbots is a competitive, real-time card game prototype where each player builds
 
 ---
 
-## **Technical Systems & My Role**
+## Technical Implementation & My Role
 
-In this project, I acted as the **primary programmer and prototypist** for the central mechanics. My key focus was building the competitive core loop while ensuring design flexibility.
+In this project, I acted as the **primary programmer and prototypist** for the central mechanics.
 
-* **Core Systems Implementation (C# / ScriptableObjects):**
-    * Coded the **Modular Robot Construction** (5-slot system) which drives the **Automatic Deck Generation** (~20 cards) and determines in-game synergies.
-    * Implemented the **Short Turn Loop** (20s card selection) and the **Deterministic Resolution** logic, ensuring consistent outcomes for simultaneous actions.
-    * Used **ScriptableObjects** extensively for all card and part data to simplify balancing and allow for *hot-reloads*.
-* **Prototyping & Iteration Quality:**
-    * Developed **Editor Tools** (*inspector helpers*, simple importers) to empower designers to adjust parameters without requiring recompilation.
-    * Conducted rapid **Playtest Cycles** (collecting basic metrics) and learned that small changes in costs/time profoundly impact player decisions.
-    * Prioritized **simple, reliable solutions** (e.g., using a *simple authoritative server* for the prototype) to validate concepts quickly, even when it meant sacrificing advanced features like high latency tolerance.
+* **Core Systems:**
+    * I implemented the **Modular Robot Construction** (5-slot system) which drives the **Dynamic Deck Generation** (~20 cards) and the **Short Turn Loop** (20s selection window).
+    * Coded the **Deterministic Resolution** logic for consistent outcomes in simultaneous actions.
+* **Tools and Iteration:**
+    * Developed **Editor Tools** (*inspector helpers*, *templates*) using **ScriptableObjects** to allow designers to adjust cards/parts without recompilation.
+    * Conducted rapid *playtest* cycles and parameter adjustments, learning that small changes in costs/time profoundly impact player decisions.
+* **Prototyping Quality:** I prioritized **simple and reliable solutions** for quick validation. For example, I used an authoritative server with deterministic resolution to prevent *desyncs* in the prototype.
 
 ---
 
-## Network and Multiplayer Architecture
+## Network Architecture and Multiplayer
 
-The game used a **Simple Authoritative Architecture** to ensure the integrity of simultaneous turns.
+The game's rapid, simultaneous turns required a network structure to ensure integrity.
 
-* **Message Flow:** The process is based on a **logical tick per turn** (not continuous). The server resolves actions deterministically (in a fixed order) after receiving the client's choices.
-* **Communication:** **Serialization** uses a simple binary format for *snapshots* and *diffs*. **Transport** used TCP/HTTP in the prototype, but **UDP** is recommended for production to reduce latency in real-time games.
+* **Message Flow:** The game used a **Simple Authoritative Architecture**. The process is based on a **logical tick per turn** (not continuous). The server resolves actions **deterministically** (fixed order) after receiving client choices.
+* **Communication:** **Serialization** used a simple binary format for *snapshots* and *diffs*. **Transport** used TCP/HTTP in the prototype, but **UDP** is recommended for production to reduce latency in real-time games.
 * **Limitations and Learnings:**
-    * A simple authoritative architecture exposes players to *delays*.
-    * The prototype was not prepared for many simultaneous games (*scalability*) nor for *failover*/replication.
-    * Security is limited to *sanity checks*; a final product requires more robust validations and anti-cheat measures.
+    * The simple authoritative architecture exposes players to *delays*.
+    * The prototype was not prepared for many simultaneous matches (*scalability*) or for *failover*/replication.
+    * Security was limited to *sanity checks*; a final product requires more robust validations and **anti-cheat** measures.
 
 <VideoPlayer
   src="/videos/WarbotsMultiplayer.mp4"
-  title="Warbots Multiplayer and Synchronization Demo"
+  title="Warbots Multiplayer and Network Synchronization Demo"
 />
 
 ---
 
 ## Awards & Validation
 
-- **Winner — Gamejam+ Manaus 2022** (1st place local).
-- **Gazeus Award** — "Fast and Addictive Games".
-- **Finalist — BIG Festival 2022** (Ripio / Blockchain integration category).
+* **Winner — Gamejam+ Manaus 2022** (1st place local).
+* **Gazeus Award** — “Fast and Addictive Games”.
+* **Finalist — BIG Festival 2022** (Ripio / Blockchain integration category).
 
 ![Awards](/images/WarbotsPremiation.jpg)
 
