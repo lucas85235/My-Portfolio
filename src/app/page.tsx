@@ -29,7 +29,7 @@ export default async function Home() {
         <h2 className="text-3xl font-bold mb-3 text-gray-900 dark:text-gray-50">
           Professional Projects
         </h2>
-        <h3 className="mb-6 text-gray-900 dark:text-gray-50">
+        <h3 className="mb-12 text-gray-900 dark:text-gray-50">
           Click on the tiles to learn more about each project.
         </h3>
         {/* Grid Responsivo */}
