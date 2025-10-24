@@ -7,8 +7,7 @@ export const metadata = {
 };
 
 const ResumePage: React.FC = () => {
-    // Certifique-se de que o nome do arquivo PDF no caminho abaixo corresponde ao arquivo que você deseja que o usuário baixe.
-    const RESUME_PDF_PATH = '/files/_Lucas_de_Souza_Lima_Currículo.pdf'; 
+    const RESUME_PDF_PATH = '/files/_Lucas_de_Souza_Lima_Resume.pdf'; 
 
     return (
         <Container className="pt-24 pb-32">
