@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+.dark body {
+  background: #111827;
+  color: #f3f4f6;
+}
+
+body {
+  /* @apply bg-white text-gray-900; */
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.mdx-content p {
+  margin-bottom: 1.25rem;
+  /* Adiciona espaçamento vertical entre parágrafos */
+  line-height: 1.75;
+  /* Aumenta a altura da linha para melhor leitura */
+}
+
+.mdx-content h1 {
+  @apply text-3xl font-bold mt-12 mb-4;
+}
+
+.mdx-content h2 {
+  @apply text-2xl font-bold mt-8 mb-3;
+}
+
+.mdx-content h3 {
+  margin-top: 1.5em;
+  /* Espaço antes do título */
+  margin-bottom: 0.75em;
+  /* Espaço depois do título */
+}
+
+.mdx-content h1 {
+  @apply text-3xl font-bold mt-12 mb-4;
+}
+
+.mdx-content h2 {
+  @apply text-2xl font-bold mt-8 mb-3;
+}
+
+.mdx-content p {
+  /* Espaçamento entre parágrafos */
+  @apply mb-5 leading-relaxed;
+}
+
+.mdx-content ul,
+.mdx-content ol {
+  /* Espaçamento para listas */
+  @apply mb-5 pl-5;
+}
+
+.mdx-content ul li {
+  /* Estilo de lista */
+  @apply mb-2 list-disc;
+}
+
+.mdx-content ol li {
+  /* Estilo de lista ordenada */
+  @apply mb-2 list-decimal;
+}
