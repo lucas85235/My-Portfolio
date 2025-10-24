@@ -13,6 +13,7 @@ export interface ProjectMetadata {
   image: string;
   slug: string;
   tech_stack: string[];
+  featured: boolean;
   // O slug será o nome do arquivo (sem a extensão)
 }
 

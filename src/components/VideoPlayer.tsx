@@ -11,7 +11,6 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, title }) => {
     const isYouTube = src.includes('youtube.com') || src.includes('youtu.be');
 
     if (isYouTube) {
-        // Lógica para extrair o ID do YouTube e usar embed-nocookie
         const getYouTubeId = (url: string) => {
             const regex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|\/(?:watch\?.*v=|embed\/|v\/))|youtu\.be\/)([^"&?\/\s]{11})/;
             const match = url.match(regex);
